@@ -8,12 +8,12 @@ const PostListItem = ({ title, id, images, isPrivate, publish_date }) => {
         <div>
             <div className = "post-list-item">
                 <div className = "field" >
-                    <h1> Datos de cada post ya sea publico o privado</h1>
-                    
+                                       
                     <h2>Artículo del post seleccionado: {title} </h2>
 
                     <div>Número ID: <i>{id}</i></div>
                     <div>Imagen: <i>{images}</i>
+                    <br/>
                     <Link to = '/public/post/:idPost' >Leer más ... {title}.</Link>
                     </div>
                     <div>Disponibilidad del artículo: <i>{isPrivate}</i> </div>

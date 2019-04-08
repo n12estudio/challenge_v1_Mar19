@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {  connect } from 'react-redux';
 import AppFrame from './../components/AppFrame';
 import  PostsList  from './../components/PostsList';
 import  PostActions  from './../components/PostActions';
-import { dispatch } from 'rxjs/internal/observable/range';
+
 
 
 const posts = [
@@ -38,26 +39,23 @@ const posts = [
 
 class AllPostsContainer extends Component {
 
-  componentDidMount() {
-    this.props.fetchAllPost()
-  }
+
 
   handleOnCLick = () => {
     console.log('handleOnCLick');
     
   }
     renderBody = posts => (
-
         <div>
-        <PostsList
-        posts={posts}
-        urlPath={'/public/post'}
-        ></PostsList> 
-        <PostActions>
-            <button onClick={this.handleOnCLick}>Leer Artículo</button>
-        </PostActions>
-        </div>
+          <PostsList
+            posts={posts}
+            urlPath={'/public/post'}
+          ></PostsList> 
 
+          <PostActions>
+            <button onClick={this.handleOnCLick}>Leer Artículo</button>
+          </PostActions>
+          </div>
     );
 
 
@@ -65,21 +63,16 @@ class AllPostsContainer extends Component {
         return (
             <div>
                 <AppFrame header = {'Listado de todos los posteos'}
-                body= {this.renderBody(this.props.posts)}
-                ></AppFrame>
+                  body= {this.renderBody(posts)} ></AppFrame>
             </div>
         );
     }
 }
+ AllPostsContainer.propTypes = {
 
-AllPostsContainer.propTypes = {
-  fetchAllPost: PropTypes.func.isRequired,
-}
+ }
 
-const mapDispatchToProps = dispatch => (
-  {
-    fetchAllPost: ( ) => dispatch(fetchAllPost ())
-  }
-)
 
-export default (connect(null, mapDispatchToProps )(AllPostsContainer));
+
+
+export default AllPostsContainer;

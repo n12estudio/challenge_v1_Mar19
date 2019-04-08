@@ -5,7 +5,7 @@ const PostArticle = ({ title, id, text }) => {
     return (
         <div>
             <h1> Componente con los elementos requeridos para mostrar el artículo</h1>
-            <h3> {title} / {id} / {text} </h3>
+            <h3> Articulo: {title} / ID: {id} / Contenido: {text} </h3>
         </div>
     );
 };
