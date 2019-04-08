@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
+import PostsList from './components/PostsList';
 
 
 class App extends Component {
   renderHome = () => <h1>Home Container = Contenedor de todos los posts.</h1> ;
-  renderAllPostsContainer= () => <h1>Contenedor de todos los posts </h1>
+  renderAllPostsContainer = () => < PostsList />
   renderPublicPostContainer = () => <h1> contenedor de un post publico. </h1> ;
   renderPrivatePostContainer = () => <h1> Contenedor de un post privado. </h1>
 
