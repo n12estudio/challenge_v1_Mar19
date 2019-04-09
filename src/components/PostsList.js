@@ -10,13 +10,14 @@ const PostsList =  ({ posts }) => {
             {
              posts = posts.map( apts => 
                     <PostListItem
-                    key={apts.id}
+                    key={apts._id}
                     title={apts.title} 
-                    id={apts.id}
+                    _id={apts._id}
                     images= {apts.images}                
                     isPrivate = {apts.isPrivate}
                     publish_date= {apts.publish_date}
-                                
+                    text={apts.text}   
+                    status = {apts.status}        
                     ></PostListItem> )
                     
             }

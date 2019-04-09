@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 const PostActions = ({ children }) => {
     return (
         <div>
-           <div className= "Post-Actions"></div>
+           <div className= "post-actions">
            <div>{children}</div>
+           </div>
         </div>
     );
 };

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import {  connect } from 'react-redux';
 import AppFrame from './../components/AppFrame';
 import  PostsList  from './../components/PostsList';
 import  PostActions  from './../components/PostActions';
+import { fetchAllPost } from './../actions/fetchAllPost';
 
 
 
@@ -39,11 +41,13 @@ const posts = [
 
 class AllPostsContainer extends Component {
 
-
+  componentDidMount(){
+    this.props.fetchAllPost() ;
+  }
 
   handleOnCLick = () => {
     console.log('handleOnCLick');
-    
+    this.props.history.push('/')
   }
     renderBody = posts => (
         <div>
@@ -52,8 +56,8 @@ class AllPostsContainer extends Component {
             urlPath={'/public/post'}
           ></PostsList> 
 
-          <PostActions>
-            <button onClick={this.handleOnCLick}>Leer Artículo</button>
+          <PostActions className="post-actions">
+            <button onClick={this.handleOnCLick}>Buscar más sobre ...</button>
           </PostActions>
           </div>
     );
@@ -68,11 +72,17 @@ class AllPostsContainer extends Component {
         );
     }
 }
- AllPostsContainer.propTypes = {
 
- }
+AllPostsContainer.propTypes = {
+  fetchAllPost: PropTypes.func.isRequired, 
+  
+ };
+
+const mapDispatchToProps = dispatch => (
+  {
+    fetchAllPost: () => dispatch( fetchAllPost() )
+  }
+)
 
 
-
-
-export default AllPostsContainer;
+export default withRouter( connect(null, mapDispatchToProps)( AllPostsContainer));

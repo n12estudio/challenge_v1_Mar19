@@ -1,5 +1,4 @@
-export const fetchAllPost = () => {
-debugger;
-    return { type: 'FETCH_ALL_POSTS', payload: null}
+import { FETCH_ALL_POSTS } from './../constants/index';
+
+export const fetchAllPost = () => ( { type: FETCH_ALL_POSTS, payload: null} );
     
-};

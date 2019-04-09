@@ -7,8 +7,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.post-actions {
+    width: 100% ;
+    background: rgb(151, 146, 146) ;
+    padding: 50px;
+    margin: 1px ;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.post-actions button {
+  background: rgb(143, 137, 199);
+  min-width: 100px;
+  height: 40px;
+  margin: 5px;
+}
+
+.post-list-item .field {  
+    margin: 5px;
+    padding: 10px;
+    background:  rgb(97, 86, 128);
+    display: inline-block ;
 }
