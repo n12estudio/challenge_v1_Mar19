@@ -1,4 +1,7 @@
+// const apiFetchPosts = () => fetch(urlPath).then (data => data.json() );
 
-const apiGet = ( urlGetPost ) => fetch(urlGetPost).then( p => p.json() );
+
+
+const apiGet = ( urlPath ) => () => fetch(urlPath).then( data => data.json() );
 
 export default apiGet ;

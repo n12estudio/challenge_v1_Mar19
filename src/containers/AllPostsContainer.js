@@ -6,7 +6,7 @@ import AppFrame from './../components/AppFrame';
 import  PostsList  from './../components/PostsList';
 import  PostActions  from './../components/PostActions';
 import fetchAllPost from './../actions/fetchAllPost';
-import { getPosts } from './../selectors/posts';
+import  {getPosts}  from './../selectors/posts';
 
 class AllPostsContainer extends Component {
 
