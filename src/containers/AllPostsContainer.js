@@ -5,8 +5,8 @@ import {  connect } from 'react-redux';
 import AppFrame from './../components/AppFrame';
 import  PostsList  from './../components/PostsList';
 import  PostActions  from './../components/PostActions';
-import { fetchAllPost } from './../actions/fetchAllPost';
-import { getPosts } from '../selectors/posts';
+import fetchAllPost from './../actions/fetchAllPost';
+import { getPosts } from './../selectors/posts';
 
 class AllPostsContainer extends Component {
 
@@ -55,4 +55,4 @@ const mapStateToProps = state => ({
     posts: getPosts(state)
 });
 
-export default withRouter( connect( mapStateToProps, {fetchAllPost})( AllPostsContainer));
+export default withRouter( connect( mapStateToProps, {fetchAllPost} )( AllPostsContainer ) );

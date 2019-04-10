@@ -1,3 +1,5 @@
-const urlPath = 'http://localhost:3006/' ;
+const urlPath = 'https://challenge-n12.herokuapp.com/api/v1' ;
 
-export const urlPosts = `${urlPath}public/posts` ;
+const urlGetPosts = `${urlPath}/public/posts` ;
+
+export default urlGetPosts ;

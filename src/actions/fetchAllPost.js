@@ -1,8 +1,11 @@
 import { FETCH_ALL_POSTS } from './../constants/index';
-import {  createAction} from 'redux-actions';
-import { apiGet } from './../api';
-import { urlPosts } from '../api/url';
+import {  createAction } from 'redux-actions';
+
+const urlPath = 'https://challenge-n12.herokuapp.com/api/v1/public/posts'
+
+const apiFetchPosts = () => fetch(urlPath).then (data => data.json() );
 
 
-export const fetchAllPost = createAction(  FETCH_ALL_POSTS, apiGet(urlPosts));
-    
+const fetchAllPost = createAction( FETCH_ALL_POSTS, apiFetchPosts ) ;
+ 
+export default  fetchAllPost ;

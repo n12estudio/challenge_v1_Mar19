@@ -1,2 +1,4 @@
 
-export const apiGet = ( urlPost ) => fetch(urlPost).then( p => p.json() );
+const apiGet = ( urlGetPost ) => fetch(urlGetPost).then( p => p.json() );
+
+export default apiGet ;
