@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import AllPostsContainer from './containers/AllPostsContainer';
-
+import PostContainer from './containers/PostContainer';
 
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
 
         <Route exact path="/" component= {HomeContainer} />
         <Route exact path= "/public/post" component={AllPostsContainer} />
-        <Route exact path= "/public/post/:idPost" component={this.renderPublicPostContainer} />
+        <Route exact path= "/public/post/:idPost" component={PostContainer} />
         <Route exact path="/posts/:idPostPrivate" component={this.renderPrivatePostContainer} />
                 
         </div>

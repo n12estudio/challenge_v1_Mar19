@@ -30,9 +30,8 @@ const PostListItem = ({ title, _id, images, isPrivate, publish_date }) => {
 PostListItem.propTypes = {
     title: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired,
-    images: PropTypes.element.isRequired,
+    images: PropTypes.array.isRequired,
     isPrivate: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     publish_date: PropTypes.string.isRequired,  
 };
